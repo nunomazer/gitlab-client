@@ -1,0 +1,22 @@
+{
+    "name": "torzer/gitlab-client",
+    "description": "Simple Gitlab API client",
+    "keywords": ["API", "Rest", "git", "Gitlab"],
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Ademir Mazer Junior",
+            "email": "mazer@torzer.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+          "Torzer\\GitlabClient\\": "src/"
+        }
+    }
+}

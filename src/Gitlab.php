@@ -321,4 +321,23 @@ class Gitlab {
         return json_decode($this->http->post($uri)->getBody()->getContents());
     }
 
+
+    /**
+     * Get tags / realeases in project
+     *
+     * @param int $project_id
+     * @param string $order_by - updated or name
+     * @param string $sort - asc or desc
+     * @return \stdClass Merge request object
+     */
+    public function getTags($project_id, $order_by = 'updated', $sort = 'desc') {
+
+        $uri = $this->projectsSegment($project_id) .
+                $this->tagSegment() .
+                '?order_by=' . $order_by .
+                '&sort=' . $sort;
+
+        return json_decode($this->http->get($uri)->getBody()->getContents());
+    }
+
 }
